@@ -1,0 +1,75 @@
+/* CSS for the animation demo page */
+:root {
+    --primary-color: #2196f3;
+    --transition-duration: 0.3s;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    transition: background-color var(--transition-duration);
+    padding: 20px;
+}
+
+.animation-box {
+    width: 150px;
+    height: 150px;
+    background-color: var(--primary-color);
+    margin: 20px auto;
+    border-radius: 8px;
+    transition: transform var(--transition-duration);
+}
+
+.animation-box:hover {
+    transform: scale(1.05);
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.spin {
+    animation: spin 2s linear infinite;
+}
+
+.pulse {
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+.controls {
+    text-align: center;
+    margin: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    transition: opacity var(--transition-duration);
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+.preferences {
+    margin-top: 30px;
+    padding: 20px;
+    border-top: 1px solid #ddd;
+}
+
+.dark-mode {
+    background-color: #1a1a1a;
+    color: white;
+}
+  
